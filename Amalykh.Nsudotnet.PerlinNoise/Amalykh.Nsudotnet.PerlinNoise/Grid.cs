@@ -9,14 +9,14 @@ namespace Amalykh.Nsudotnet.PerlinNoise
     class Grid
     {
         private ColorRGB[,] _c;
-        private int n;
+        private int _n;
         private int _imageSize;
 
         public Grid(int imageSize, int n)
         {
             _c = new ColorRGB[n + 3, n + 3];
             _imageSize = imageSize;
-            this.n = n;
+            this._n = n;
 
             NoiseGenerator generator = new NoiseGenerator();
             for (int i = 0; i < n + 3; i++)
@@ -33,8 +33,8 @@ namespace Amalykh.Nsudotnet.PerlinNoise
 
             const double eps = 1e-9;
 
-            double cRow = (row + 0.0) / _imageSize * n - eps;
-            double cColumn = (column + 0.0) / _imageSize * n - eps;
+            double cRow = (row + 0.0) / _imageSize * _n - eps;
+            double cColumn = (column + 0.0) / _imageSize * _n - eps;
 
             if (cRow < 0) cRow = eps;
             if (cColumn < 0) cColumn = eps;

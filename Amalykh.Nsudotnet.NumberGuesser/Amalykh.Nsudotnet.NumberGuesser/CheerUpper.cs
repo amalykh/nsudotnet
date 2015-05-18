@@ -10,17 +10,17 @@ namespace Amalykh.Nsudotnet.NumberGuesser
     {
         private string[] _cheers = { "{0} seems to have real problems with guessing", "Why not to try random, {0}?", "{0}, remember, there are at most 101 number to try" };
         private string _username;
-        private Random random;
+        private Random _random;
         
         public CheerUpper(string username)
         {
             _username = username;
-            random = new Random();
+            _random = new Random();
         }
 
         public string GetCheerUpString()
         {
-            return string.Format(_cheers[random.Next(0, _cheers.Length)], _username);
+            return string.Format(_cheers[_random.Next(0, _cheers.Length)], _username);
         }
     }
 }

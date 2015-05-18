@@ -8,7 +8,7 @@ namespace Amalykh.Nsudotnet.PerlinNoise
 {
     class ColorRGB
     {
-        private double r, g, b;
+        private double _r, _g, _b;
         public ColorRGB(double r, double g, double b)
         {
             R = r;
@@ -22,18 +22,18 @@ namespace Amalykh.Nsudotnet.PerlinNoise
 
         public double R
         {
-            get { return Math.Max(0.0, Math.Min(r, 255.0)); }
-            set { r = Math.Max(0.0, Math.Min(255.0, value)); }
+            get { return Math.Max(0.0, Math.Min(_r, 255.0)); }
+            set { _r = Math.Max(0.0, Math.Min(255.0, value)); }
         }
         public double G
         {
-            get { return Math.Max(0.0, Math.Min(g, 255.0)); }
-            set {  g = Math.Max(0.0, Math.Min(255.0, value)); }
+            get { return Math.Max(0.0, Math.Min(_g, 255.0)); }
+            set {  _g = Math.Max(0.0, Math.Min(255.0, value)); }
         }
         public double B
         {
-            get { return Math.Max(0.0, Math.Min(b, 255.0)); }
-            set { b = Math.Max(0.0, Math.Min(255.0, value)); }
+            get { return Math.Max(0.0, Math.Min(_b, 255.0)); }
+            set { _b = Math.Max(0.0, Math.Min(255.0, value)); }
         }
 
         private int normalize(double d)

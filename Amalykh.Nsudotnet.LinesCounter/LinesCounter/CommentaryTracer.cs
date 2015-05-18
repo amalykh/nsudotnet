@@ -9,7 +9,7 @@ namespace Amalykh.Nsudotnet.LinesCounter
     class CommentaryTracer
     {
         private int _curComment = -1;
-        private List<Commentary> commentaries;
+        private List<Commentary> _commentaries;
 
         public void Reset() //sets no comment at current time
         {
@@ -18,21 +18,21 @@ namespace Amalykh.Nsudotnet.LinesCounter
 
         public CommentaryTracer()
         {
-            commentaries = new List<Commentary>();
+            _commentaries = new List<Commentary>();
         }
 
         public void AddComment(Commentary comment)
         {
-            commentaries.Add(comment);
+            _commentaries.Add(comment);
         }
 
         private void Process(string combination)
         {
             if (_curComment == -1)
             {
-                for (int i = 0; i < commentaries.Count; i++)
+                for (int i = 0; i < _commentaries.Count; i++)
                 {
-                    if (commentaries[i].Start == combination)
+                    if (_commentaries[i].Start == combination)
                     {
                         _curComment = i;
                         break;
@@ -41,7 +41,7 @@ namespace Amalykh.Nsudotnet.LinesCounter
             }
             else
             {
-                if (commentaries[_curComment].End == combination)
+                if (_commentaries[_curComment].End == combination)
                     _curComment = -1;
             }
         }
