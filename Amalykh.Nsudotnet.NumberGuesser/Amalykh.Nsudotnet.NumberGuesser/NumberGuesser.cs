@@ -80,11 +80,9 @@ namespace Amalykh.Nsudotnet.NumberGuesser
             Console.WriteLine("Attempts count: {0}", attempts.Count + 1);
             Console.WriteLine("History of your attempts:");
             for (int i = 0; i < attempts.Count; i++)
-                Console.WriteLine(attempts[i] + ((attempts[i] > targetNumber) ? (" >") : (" <")));
+                Console.WriteLine("{0} {1}", attempts[i], ((attempts[i] > targetNumber) ? (">") : ("<")));
 
-            Console.WriteLine("And it took " + (endTime - startTime).ToString(timeSpanFormat));
-
-            Console.ReadKey();
+            Console.WriteLine("And it took: {0}", (endTime - startTime).ToString(timeSpanFormat));
         }
     }
 }
