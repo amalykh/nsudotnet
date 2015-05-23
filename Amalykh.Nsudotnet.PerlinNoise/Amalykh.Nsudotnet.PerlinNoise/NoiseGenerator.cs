@@ -8,16 +8,16 @@ namespace Amalykh.Nsudotnet.PerlinNoise
 {
     class NoiseGenerator
     {
-        Random rnd;
+        private Random _rnd;
 
         public NoiseGenerator()
         {
-            rnd = new Random();
+            _rnd = new Random();
         }
 
         public double GetSomeNoise()
         {
-            return rnd.Next(50, 255);
+            return _rnd.Next(50, 255);
         }
     }
 }
