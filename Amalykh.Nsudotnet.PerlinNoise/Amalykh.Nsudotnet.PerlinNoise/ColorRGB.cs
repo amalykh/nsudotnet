@@ -36,14 +36,6 @@ namespace Amalykh.Nsudotnet.PerlinNoise
             set { _b = Math.Max(0.0, Math.Min(255.0, value)); }
         }
 
-        private int normalize(double d)
-        {
-            int t = (int)Math.Round(d);
-            t = Math.Min(255, t);
-            t = Math.Max(0, t);
-            return t;
-        }
-
         public static ColorRGB operator *(ColorRGB a, double k)
         {
             return new ColorRGB(a.R * k, a.G * k, a.B * k);

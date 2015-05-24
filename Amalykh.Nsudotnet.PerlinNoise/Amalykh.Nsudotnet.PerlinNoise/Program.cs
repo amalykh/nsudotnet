@@ -11,23 +11,19 @@ namespace Amalykh.Nsudotnet.PerlinNoise
     {
         static void Main(string[] args)
         {
-            const string E_ARG_CNT = "Incorrect arguments count";
-            const string E_FRST_NOI = "First argument must be size of the image";
+            const string incorrectArgumentsCount = "Incorrect arguments count";
+            const string incorrectFirstArgument = "First argument must be size of the image";
 
             if (args.Length < 2)
             {
-                Console.WriteLine(E_ARG_CNT);
+                Console.WriteLine(incorrectArgumentsCount);
                 return;
             }
 
             int size;
-            try
+            if (!int.TryParse(args[0], out size))
             {
-                size = int.Parse(args[0]);
-            }
-            catch (FormatException e)
-            {
-                Console.WriteLine(E_FRST_NOI);
+                Console.WriteLine(incorrectFirstArgument);
                 return;
             }
 
