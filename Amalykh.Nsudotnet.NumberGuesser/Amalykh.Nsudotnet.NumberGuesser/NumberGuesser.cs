@@ -38,11 +38,7 @@ namespace Amalykh.Nsudotnet.NumberGuesser
                     Environment.Exit(0);
                 }
 
-                try
-                {
-                    enteredNumber = int.Parse(curGuess);
-                }
-                catch (FormatException e)
+                if (!int.TryParse(curGuess, out enteredNumber))
                 {
                     Console.WriteLine("Try to enter number next time");
                     continue;
