@@ -22,17 +22,17 @@ namespace Amalykh.Nsudotnet.PerlinNoise
 
         public double R
         {
-            get { return Math.Max(0.0, Math.Min(_r, 255.0)); }
+            get { return _r; }
             set { _r = Math.Max(0.0, Math.Min(255.0, value)); }
         }
         public double G
         {
-            get { return Math.Max(0.0, Math.Min(_g, 255.0)); }
+            get { return _g; }
             set {  _g = Math.Max(0.0, Math.Min(255.0, value)); }
         }
         public double B
         {
-            get { return Math.Max(0.0, Math.Min(_b, 255.0)); }
+            get { return _b; }
             set { _b = Math.Max(0.0, Math.Min(255.0, value)); }
         }
 
